@@ -10,8 +10,13 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
-        <div v-for="(element, index) in listapokemon" :key="index">
-        {{element}}
+        <div v-if="listapokemon.length == 151">
+            <div v-for="(element, index) in listapokemon" :key="index">
+                {{element.name}}
+                ID:{{element.id}}
+                <img :src="element.image" style="height: 100px; aspect-ratio: 1;" alt="">
+        </div>
+        
 
         </div>
     </div>
