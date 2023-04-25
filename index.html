@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -10,61 +13,65 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
-        <div v-if="listapokemon.length == 151">
+        <!-- <div v-if="listapokemon.length == 151">
             <div v-for="(element, index) in listapokemon" :key="index">
                 {{element.name}}
                 ID:{{element.id}}
                 <img :src="element.image" style="height: 100px; aspect-ratio: 1;" alt="">
-        </div>
-        
-
-        </div>
-    </div>
-        <!-- <div>
-            <span>
-                ID : {{numero - 1}}
-            </span>
-            <span>
-                NAME : {{listapokemon[numero -2].name}}
-            </span>
         </div> -->
-        <!-- <div v-if="visibilitaSopra">
-            <span>
-                ID : {{numerosopra}}
-            </span>
-            <span>
-                NAME : {{listapokemon[numero -1].name}}
-            </span>
-        </div>
-        <div>
-            <span>
-                ID : {{numero + 1}}
-            </span>
-            <span>
-                NAME : {{listapokemon[numero].name}}
-            </span>
-        </div>
-        <div>
-            <span>
-                ID : {{numero + 2}}
-            </span>
-            <span>
-                NAME : {{listapokemon[numero +1].name}}
-            </span>
-        </div>
-        <div>
-            <span>
-                ID : {{numero + 3}}
-            </span>
-            <span>
-                NAME : {{listapokemon[numero +2].name}}
-            </span>
-        </div>
-       
-       <button @click="numeropiu">avanti</button>
-    </div> -->
+        <div v-if="listapokemon.length == 151"  class="container" >
+            <div class="pokedex">
+                <div class="schermo-sinistra">
+                    <div class="interno-schermo-sinistra">
+                        <div class="linea-interna">
+                            <span class="mrText">
+                                {{listapokemon[contatore].name}}
+                            </span>
+                        </div>
+                        <div class="linea-interna">
+                            <span class="mrText">
+                                {{listapokemon[contatore +1].name}}
+                            </span>
+                        </div>
+                        <div class="linea-interna">
+                            <span class="mrText">
+                                {{listapokemon[contatore +2].name}}
+                            </span>
+                        </div>
+                        <div class="linea-interna">
+                            <span class="mrText">
+                                {{listapokemon[contatore +3].name}}
+                            </span>
+                        </div>
+                        <div class="linea-interna">
+                            <span class="mrText">
+                                {{listapokemon[contatore +4].name}}
+                            </span>
+                        </div>
+                        <div class="linea-interna">
+                            <span class="mrText">
+                                {{listapokemon[contatore +5].name}}
+                            </span>
+                        </div>
+                        <i class="fa-solid fa-caret-left" id="triangle" :style="posizionetriangolo"></i>
+                    </div>
+                </div>
+                <div class="linea-nera">
 
+                </div>
+                <div class="schermo-destra">
+                    <img class="pics":src="listapokemon[contatoreImg].image" alt="">
 
+                </div>
+                
+
+            </div>
+            <button @click="aumenta"   >daje</button>
+
+        </div>
+
+    </div>
+        
     <script src="./assets/js/main.js"></script>
 </body>
 </html>

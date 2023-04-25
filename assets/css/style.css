@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VCR OSD Mono', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokedex {
+    width: 50%;
+    height: 80vh;
+    background-color: red;
+    position: relative;;
+
+}
+
+.schermo-sinistra {
+    height: 30vh;
+    width: 30%;
+    position: absolute;
+    left: 10%;
+    top: 25%;
+    background-color: gray;
+    border: 10px solid white;
+}
+
+.linea-nera {
+    height: 80vh;
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    background-color: black;
+}
+
+.interno-schermo-sinistra {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    filter: opacity(0.6);
+}
+
+.linea-interna {
+    flex-basis: calc(100% / 6);
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+#triangle {
+    position: absolute;
+    right: 0;
+    font-size: 2rem;
+    z-index: 99;
+}
+
+.schermo-destra {
+    height: 30vh;
+    width: 30%;
+    position: absolute;
+    right: 10%;
+    top: 25%;
+    border: 10px solid white;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.mrText {
+    margin-left: 10px;
+    text-transform: capitalize ;
+}
+
+.pics {
+    height: 90%;
+    aspect-ratio: 1;
+    filter: grayscale(1) opacity(0.6);
+
+}

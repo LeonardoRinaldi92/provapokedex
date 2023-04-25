@@ -4,6 +4,9 @@ createApp({
     data() {
       return {
         listapokemon :[],
+        contatore : 0,
+        contatoreImg : 0,
+        posizionetriangolo : "top: 0%",
       }
     },
     methods: {
@@ -26,29 +29,28 @@ createApp({
             }
             console.log(this.listapokemon)
         },
+        aumenta(){
+            this.contatoreImg ++
+            if (this.posizionetriangolo === "top: 0%") {
+                this.posizionetriangolo = "top: calc(100% / 6)"
+            } else if (this.posizionetriangolo === "top: calc(100% / 6)") {
+                this.posizionetriangolo = "top: calc((100% / 6)*2)"
+            } else if (this.posizionetriangolo === "top: calc((100% / 6)*2)") {
+                this.posizionetriangolo = "top: calc((100% / 6)*3)"
+            } else if (this.posizionetriangolo === "top: calc((100% / 6)*3)") {
+                this.posizionetriangolo = "top: calc((100% / 6)*4)"
+            } else if (this.posizionetriangolo === "top: calc((100% / 6)*4)") {
+                this.posizionetriangolo = "top: calc((100% / 6)*5)"
+            } else if (this.posizionetriangolo === "top: calc((100% / 6)*5)") {
+                this.contatore ++
+            }
+        },
     },
     created() {
         this.trovapokemon()
     },
 
-        // numeropiu() {
-        //     this.numero ++
-        // },
-        // numeroSopra() {
-        //     let  numero = 1
-        //     if (this.numero - 1 ==! 1 || this.numero == 1) {
-        //         visibilitaSopra = true 
-        //         return this.numero - 1
-        //     } else {
-        //         visibilitaSopra = false
-        //         return this.numero - 1
-        //     }
-
-    //     }
-    // },
-    // created() {
-    //     this.trovaMail()
-    // },
-
-
 }).mount('#app')
+
+
+/* <img class="pics":src="listapokemon[contatoreImg].image" alt=""> */
