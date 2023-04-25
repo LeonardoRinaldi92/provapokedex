@@ -52,12 +52,15 @@
                                 {{listapokemon[contatore +3].name}}
                             </span>
                             <span v-if="scelta" class="mrText">
-                                HEIGTH: {{listapokemon[contatoreImg].height}}
+                                WEIGHT: {{listapokemon[contatoreImg].weight}}
                             </span>
                         </div>
                         <div class="linea-interna">
                             <span v-if="!scelta" class="mrText">
                                 {{listapokemon[contatore +4].name}}
+                            </span>
+                            <span v-if="scelta" class="mrText">
+                                HEIGHT: {{listapokemon[contatoreImg].height}}
                             </span>
                         </div>
                         <div class="linea-interna">

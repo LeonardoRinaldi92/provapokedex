@@ -25,7 +25,8 @@ createApp({
                         pokemon.id = res.data.id
                     };
                     pokemon.image = res.data.sprites.other.dream_world.front_default;
-                    pokemon.height = res.data.types.weight;
+                    pokemon.weight = ((res.data.weight)/10) + " " + "kg";
+                    pokemon.height = ((res.data.height)* 10) + " " + "cm";
                     if (res.data.types.length == 2){
                         pokemon.type = res.data.types.map ((type) =>
                         type.type.name).join(', ')}
