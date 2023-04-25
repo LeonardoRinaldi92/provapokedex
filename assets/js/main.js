@@ -7,6 +7,7 @@ createApp({
         contatore : 0,
         contatoreImg : 0,
         posizionetriangolo : "top: 0%",
+        scelta : false,
       }
     },
     methods: {
@@ -24,6 +25,15 @@ createApp({
                         pokemon.id = res.data.id
                     };
                     pokemon.image = res.data.sprites.other.dream_world.front_default;
+                    pokemon.height = res.data.types.weight;
+                    if (res.data.types.length == 2){
+                        pokemon.type = res.data.types.map ((type) =>
+                        type.type.name).join(', ')}
+                        else {
+                        pokemon.type = res.data.types[0].type.name
+                        };
+                    
+                    console.log (pokemon.heigth)
                     this.listapokemon.push(pokemon)
                 })
             }
@@ -45,6 +55,9 @@ createApp({
                 this.contatore ++
             }
         },
+        scegli(){
+            this.scelta = true
+        }
     },
     created() {
         this.trovapokemon()
@@ -53,4 +66,3 @@ createApp({
 }).mount('#app')
 
 
-/* <img class="pics":src="listapokemon[contatoreImg].image" alt=""> */

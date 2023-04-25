@@ -24,49 +24,62 @@
                 <div class="schermo-sinistra">
                     <div class="interno-schermo-sinistra">
                         <div class="linea-interna">
-                            <span class="mrText">
+                            <span v-if="!scelta" class="mrText">
                                 {{listapokemon[contatore].name}}
                             </span>
+                            <span v-if="scelta" class="mrText">
+                                {{listapokemon[contatoreImg].name}}
+                            </span>
                         </div>
                         <div class="linea-interna">
-                            <span class="mrText">
+                            <span v-if="!scelta" class="mrText">
                                 {{listapokemon[contatore +1].name}}
                             </span>
+                            <span v-if="scelta" class="mrText">
+                                ID:{{listapokemon[contatoreImg].id}}
+                            </span>
                         </div>
                         <div class="linea-interna">
-                            <span class="mrText">
+                            <span v-if="!scelta" class="mrText">
                                 {{listapokemon[contatore +2].name}}
                             </span>
-                        </div>
-                        <div class="linea-interna">
-                            <span class="mrText">
-                                {{listapokemon[contatore +3].name}}
+                            <span v-if="scelta" class="mrText">
+                                TYPE: {{listapokemon[contatoreImg].type}}
                             </span>
                         </div>
                         <div class="linea-interna">
-                            <span class="mrText">
+                            <span v-if="!scelta" class="mrText">
+                                {{listapokemon[contatore +3].name}}
+                            </span>
+                            <span v-if="scelta" class="mrText">
+                                HEIGTH: {{listapokemon[contatoreImg].height}}
+                            </span>
+                        </div>
+                        <div class="linea-interna">
+                            <span v-if="!scelta" class="mrText">
                                 {{listapokemon[contatore +4].name}}
                             </span>
                         </div>
                         <div class="linea-interna">
-                            <span class="mrText">
+                            <span v-if="!scelta" class="mrText">
                                 {{listapokemon[contatore +5].name}}
                             </span>
                         </div>
-                        <i class="fa-solid fa-caret-left" id="triangle" :style="posizionetriangolo"></i>
+                        <i v-if="!scelta" class="fa-solid fa-caret-left" id="triangle" :style="posizionetriangolo"></i>
                     </div>
                 </div>
                 <div class="linea-nera">
 
                 </div>
                 <div class="schermo-destra">
-                    <img class="pics":src="listapokemon[contatoreImg].image" alt="">
+                    <img v-if="scelta" class="pics":src="listapokemon[contatoreImg].image" alt="">
 
                 </div>
-                
-
+                <div class="buttonA" @click="scegli">
+                    A
+                </div>
             </div>
-            <button @click="aumenta"   >daje</button>
+            <button @click="aumenta">daje</button>
 
         </div>
 
