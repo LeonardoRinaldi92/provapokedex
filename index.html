@@ -76,14 +76,22 @@
                 </div>
                 <div class="schermo-destra">
                     <img v-if="scelta" class="pics":src="listapokemon[contatoreImg].image" alt="">
-
                 </div>
                 <div class="buttonA" @click="scegli">
                     A
                 </div>
+                <div class="buttonB" @click="back">
+                    B
+                </div>
+                <div class="up-n-down">
+                    <div>
+                        <i class="fa-solid fa-caret-up"></i>
+                    </div>
+                    <div @click="aumenta">
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>                   
+                </div>
             </div>
-            <button @click="aumenta">daje</button>
-
         </div>
 
     </div>

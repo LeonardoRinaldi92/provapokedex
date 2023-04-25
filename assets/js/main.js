@@ -33,14 +33,12 @@ createApp({
                         else {
                         pokemon.type = res.data.types[0].type.name
                         };
-                    
-                    console.log (pokemon.heigth)
                     this.listapokemon.push(pokemon)
                 })
             }
-            console.log(this.listapokemon)
         },
         aumenta(){
+            if (this.contatore < 151) {
             this.contatoreImg ++
             if (this.posizionetriangolo === "top: 0%") {
                 this.posizionetriangolo = "top: calc(100% / 6)"
@@ -54,11 +52,25 @@ createApp({
                 this.posizionetriangolo = "top: calc((100% / 6)*5)"
             } else if (this.posizionetriangolo === "top: calc((100% / 6)*5)") {
                 this.contatore ++
+            }    
+            } else {
+                this.contatore = 0;
+                this.contatoreImg = 0;
+            }    
+        },
+
+        scegli(){
+            if (!this.scelta){
+            this.scelta = true
             }
         },
-        scegli(){
-            this.scelta = true
-        }
+        back(){
+            if (this.scelta){
+            this.scelta = false
+            }
+        },
+
+        
     },
     created() {
         this.trovapokemon()

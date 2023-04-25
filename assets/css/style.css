@@ -103,6 +103,34 @@
     border-radius: 100%;
     position: absolute;
     bottom: 100px;
-    left: 35%;
+    left: 40%;
+    cursor: pointer;
+}
+
+.buttonB {
+    height: 50px;
+    aspect-ratio: 1;
+    line-height: 30px;
+    font-size: 30px;
+    padding: 10px;
+    background-color: rgb(131, 124, 124);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 60px;
+    left: 32%;
+    cursor: pointer;
+}
+
+.up-n-down {
+    font-size: 3.5rem;
+    position: absolute;
+    bottom: 50px;
+    left:8%;
+}
+
+.up-n-down .fa-solid {
     cursor: pointer;
 }
