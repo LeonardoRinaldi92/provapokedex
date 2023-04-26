@@ -17,13 +17,7 @@ createApp({
                 axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`).then( (res) => 
                 {
                     pokemon.name = res.data.forms[0].name;
-                    if (res.data.id < 10){
-                        pokemon.id = "00" +  res.data.id
-                    } else if (res.data.id < 100){
-                        pokemon.id = "0" +  res.data.id
-                    }else if (res.data.id >= 100){
-                        pokemon.id = res.data.id
-                    };
+                    pokemon.id = res.data.id
                     pokemon.image = res.data.sprites.other.dream_world.front_default;
                     pokemon.weight = ((res.data.weight)/10) + " " + "kg";
                     pokemon.height = ((res.data.height)* 10) + " " + "cm";
@@ -33,7 +27,18 @@ createApp({
                         else {
                         pokemon.type = res.data.types[0].type.name
                         };
-                    this.listapokemon.push(pokemon)
+                    if(pokemon.id == [i]){
+                        if ([i] < 10){
+                            pokemon.id = `00${[i]}`
+                            this.listapokemon.push(pokemon)
+                        } else if (res.data.id < 100){
+                            pokemon.id = `0${[i]}`
+                            this.listapokemon.push(pokemon)
+                        }else if (res.data.id >= 100){
+                       pokemon.id = `${[i]}`
+                       this.listapokemon.push(pokemon)}
+                    }
+                    
                 })
             }
             console.log(this.listapokemon)
