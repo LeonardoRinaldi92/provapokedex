@@ -56,7 +56,31 @@ createApp({
             } else {
                 this.contatore = 0;
                 this.contatoreImg = 0;
-            }    
+            }
+            console.log(this.contatoreImg + "contatoreIMG");
+            console.log(this.contatore + "contatore")
+        },
+        diminuisci(){
+            if (this.contatoreImg > 0) {
+                this.contatoreImg --;
+            if (this.posizionetriangolo === "top: calc((100% / 6)*5)") {
+                this.posizionetriangolo = "top: calc((100% / 6)*4)"
+                } else if (this.posizionetriangolo === "top: calc((100% / 6)*4)") {
+                    this.posizionetriangolo = "top: calc((100% / 6)*3)"
+                } else if (this.posizionetriangolo === "top: calc((100% / 6)*3)") {
+                    this.posizionetriangolo = "top: calc((100% / 6)*2)"
+                } else if (this.posizionetriangolo === "top: calc((100% / 6)*2)") {
+                    this.posizionetriangolo = "top: calc(100% / 6)"
+                } else if (this.posizionetriangolo === "top: calc(100% / 6)") {
+                    this.posizionetriangolo = "top: 0%"
+                } else if ( this.posizionetriangolo === "top: 0%") {
+                    this.posizionetriangolo = "top: 0%"
+                    this.contatore --
+                }
+            }  
+            console.log(this.contatoreImg + "contatoreIMG");
+            console.log(this.contatore + "contatore")
+
         },
 
         scegli(){
