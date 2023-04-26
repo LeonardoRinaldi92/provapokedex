@@ -36,6 +36,7 @@ createApp({
                     this.listapokemon.push(pokemon)
                 })
             }
+            console.log(this.listapokemon)
         },
         aumenta(){
             if (this.contatore < 151) {
@@ -57,8 +58,6 @@ createApp({
                 this.contatore = 0;
                 this.contatoreImg = 0;
             }
-            console.log(this.contatoreImg + "contatoreIMG");
-            console.log(this.contatore + "contatore")
         },
         diminuisci(){
             if (this.contatoreImg > 0) {
@@ -78,9 +77,6 @@ createApp({
                     this.contatore --
                 }
             }
-            console.log(this.contatoreImg + "contatoreIMG");
-            console.log(this.contatore + "contatore")
-
         },
 
         scegli(){
