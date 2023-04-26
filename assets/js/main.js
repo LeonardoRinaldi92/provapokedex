@@ -77,7 +77,7 @@ createApp({
                     this.posizionetriangolo = "top: 0%"
                     this.contatore --
                 }
-            }  
+            }
             console.log(this.contatoreImg + "contatoreIMG");
             console.log(this.contatore + "contatore")
 
@@ -91,6 +91,10 @@ createApp({
         back(){
             if (this.scelta){
             this.scelta = false
+            } else {
+                this.contatore = 0;
+            this.contatoreImg = 0;
+            this.posizionetriangolo = "top: 0%"
             }
         },
 
